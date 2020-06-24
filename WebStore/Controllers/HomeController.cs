@@ -10,8 +10,7 @@ namespace WebStore.Controllers
     {
         public IActionResult Index()
         {
-            return Content("Controller #1 - Home!");
-            // return View();
+            return View("Index");
         }
     }
 }
