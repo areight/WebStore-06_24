@@ -40,14 +40,18 @@ namespace WebStore
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/greetings", async context => await context.Response.WriteAsync(_Configuration["CustomGreetings"]));
+                endpoints.MapGet("/greetings", async context =>
+                {
+                    await context.Response.WriteAsync(_Configuration["CustomGreetings"]);
+                });
 
                 endpoints.MapControllerRoute(
-                name:"default",
-                pattern:"{controller=Home}/{action=Index}/{id?}");
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                );
             });
             // Handles endpoints.
-            // An endpoint is the parts after a slash (except the first one?)
+            // An endpoint is the part after a slash (except the first one?)
         }
     }
 }
