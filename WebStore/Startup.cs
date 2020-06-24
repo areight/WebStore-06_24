@@ -42,11 +42,6 @@ namespace WebStore
             {
                 endpoints.MapGet("/greetings", async context => await context.Response.WriteAsync(_Configuration["CustomGreetings"]));
 
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Response");
-                });
-
                 endpoints.MapControllerRoute(
                 name:"default",
                 pattern:"{controller=Home}/{action=Index}/{id?}");
