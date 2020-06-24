@@ -1,0 +1,31 @@
+﻿@model WebStore.Models.Employee
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WebStore - Сотрудник:@Model.Surname @Model.Name @Model.Patronymic</title>
+</head>
+<body style="font-family:verdana">
+
+    <h3>Employee</h3>
+
+    <dl>
+        <dt>Employed at:</dt>
+        <dd>@Model.EmployementYear</dd>
+
+        <dt>Birth year:</dt>
+        <dd>@Model.BirthYear</dd>
+
+        <dt>Full name:</dt>
+        <dd>@Model.Surname @Model.Name @Model.Patronymic; @Model.Age years old. </dd>
+    </dl>
+
+    <hr />
+    <a href="~/Home/Employees">Back to list</a> <br />
+    <a href="~/">Back to homepage</a>
+    <hr />
+
+</body>
+</html>
