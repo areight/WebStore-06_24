@@ -1,14 +1,20 @@
-﻿<!DOCTYPE html>
+﻿@*@await Html.PartialAsync("Partial/_Slider")*@
+<partial name="Partial/_Slider" />
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>WebStore</title>
-</head>
-<body style="font-family:verdana">
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <partial name="Partial/_LeftSideBar" />
+            </div>
 
-    <p>Home Controller - View Index!</p>
-    <p><a href="~/Home/Employees">Employee list</a></p>
+            <div class="col-sm-9 padding-right">
+                <partial name="Partial/_FeaturesItems" />
 
-</body>
-</html>
+                <partial name="Partial/_CategoryTab" />
+
+                <partial name="Partial/_RecomendedItems" />
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,29 +10,28 @@ namespace WebStore
     public class Startup
     {
         private readonly IConfiguration _Configuration;
-        public Startup (IConfiguration Configuration)
+
+        public Startup(IConfiguration Configuration)
         {
             _Configuration = Configuration;
         }
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {                                    // Handles exceptions (for developers),
-                app.UseDeveloperExceptionPage(); // increases safety & hides file structure
-            }                                    // by not showing the error message                      (?)
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseStaticFiles();
             app.UseDefaultFiles();
 
-            app.UseRouting(); // Routing
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
@@ -50,8 +45,6 @@ namespace WebStore
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
-            // Handles endpoints.
-            // An endpoint is the part after a slash (except the first one?)
         }
     }
 }
