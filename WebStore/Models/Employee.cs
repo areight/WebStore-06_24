@@ -13,7 +13,6 @@
         public int Age { get; set; }
 
         public int EmployementYear { get; set; }
-
         public int BirthYear { get; set; }
     }
 }
