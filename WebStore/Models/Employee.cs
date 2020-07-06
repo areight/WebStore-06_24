@@ -1,4 +1,6 @@
-﻿namespace WebStore.Models
+﻿using System;
+
+namespace WebStore.Models
 {
     public class Employee
     {
@@ -14,5 +16,6 @@
 
         public int EmployementYear { get; set; }
         public int BirthYear { get; set; }
+        public DateTime EmployementDate { get; set; }
     }
 }
